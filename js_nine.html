@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>마우스 이벤트 핸들러</title>
+<script type="text/javascript">
+/* 
+<!-- -->자바스크립트를 이해하지못하는 브라우저는 js를 주석으로 처리하라는 의미
+(예전에는 사용되었으나 현재는 사용하지 않음)
+*/
+//자바스크립트는 대소문자 구별이 있고, html은 대소문자 구별이 없다.
+function mOver(str){
+	document.aa.txt.value = str;
+}
+function mOut(){
+	document.aa.txt.value = "마우스를 그림에 두세요";
+}
+function callTxt1() {
+	//직접 접근 - 요소의 id값으로 요소를 얻기
+	//id는 자바스크립트에서 요소를 직접 선택하기 위한 속성, 문서 내부에서 유일한 값
+	mytxt1 = document.getElementById("txt1");
+	alert(mytxt1.value);
+}
+function callTxt2() {
+	//직접 접근 - 요소의 이름으로 요소 얻기
+	//name은 폼구성 하위에서 존재, 문서 내부에 중복사용 가능
+	mytxt2 = document.getElementsByName("txt2");
+	alert(mytxt2[0].value);//중복이 가능하므로 배열로 받는다.
+}
+</script>
+</head>
+<body>
+<!-- 자바스크립트는 대소문자 구별이 있고, html은 대소문자 구별이 없다. -->
+<!-- 
+이벤트핸들러 : 이벤트(주로 자바스크립트 함수)를 호출하는 역할
+onmouseover : 요소 위에 마우스가 올라갈 때 
+onmouseout : 요소 위에서 마우스가 내려갈 때
+ -->
+<form name="aa">
+	<input type="text" name="txt" size="55" value="">
+</form>
+<br>
+<a onmouseover="mOver('첫번째 그림 감상')" onmouseout="mOut()">
+	<img src="./images/ryan1.png" hspace="20" width="20%" height="30%"> 
+</a>
+<a onmouseover="mOver('두번째 그림 감상')" onmouseout="mOut()">
+	<img src="./images/ryan2.png" hspace="20" width="20%" height="30%">
+</a>
+<br>
+<form name="bb">
+	<br>txt1 : <input type="text" id="txt1" name="txt1" size="25" value="안녕하세요11">
+	<br>txt2 : <input type="text" id="txt2" name="txt2" size="25" value="안녕하세요22">
+</form>
+<br>
+<input type="button" value="txt1 호출" onclick="callTxt1()"><br>
+<input type="button" value="txt2 호출" onclick="callTxt2()"><br>
+</body>
+</html>

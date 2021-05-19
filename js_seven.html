@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+//자바시간에 공부했던 문자열 관련 메서드는 이름과 기능이 동일하다.
+var str1 = "독도는 우리땅";
+var str2 = "Welcome";
+//length : 공백도 문자로 포함, 한영/구분없이 순수한 글자 갯수
+document.write(str1+"<br>");
+document.write("길이는 "+str1.length+" 입니다.<br>");
+
+document.write(str2+"<br>");
+document.write("길이는 "+str2.length+" 입니다.<br>");
+document.write("<br><hr>");
+
+str1 = "독도는 우리땅 독도는 우리땅";
+str2 = "Welcome Welcome";
+//index는 0부터 시작
+document.write(str1+"<br>");
+document.write("우 위치는  "+str1.indexOf('우')+"번지 입니다.<br>");
+document.write("우 마지막 위치는  "+str1.lastIndexOf('우')+"번지 입니다.<br>");
+document.write(str2+"<br>");
+document.write("c 위치는  "+str2.indexOf('c')+"번지 입니다.<br>");
+document.write("c 마지막 위치는  "+str2.lastIndexOf('c')+"번지 입니다.<br>");
+
+</script>
+</body>
+</html>

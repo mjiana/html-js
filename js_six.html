@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+var num;
+num = prompt("단을 입력하세요");
+
+document.write("<hr>");
+for(i=1;i<10;i++){
+	document.write(num+"*"+i+"= "+(num*i)+"<p>");
+}
+document.write("<hr> i가 4일 때 건너뛴다<br>");
+for(i=1;i<10;i++){
+	if(i == 4) continue; //조건에 해당될때만 건너뛴다.
+	document.write(num+"*"+i+"= "+(num*i)+"<p>");
+}
+document.write("<hr> i가  4일때 멈춘다.<br>");
+for(i=1;i<10;i++){
+	if(i == 4) break; //조건에 해당될때 멈춘다.
+	document.write(num+"*"+i+"= "+(num*i)+"<p>");
+}
+document.write("<hr>");
+</script>
+</body>
+</html>

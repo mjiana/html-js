@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>유효성 검사하기</title>
+</head>
+<script type="text/javascript">
+function myFormCheck(theform) {
+	//theform <= this.form <= document.mymember
+	
+	//이름 확인
+	if(theform.mname.value == null || theform.mname.value == ""){
+		alert("이름을 입력하세요");
+		theform.mname.focus();
+		return;
+	}
+	//아이디 확인
+	if(theform.mid.value == null || theform.mid.value == ""){
+		alert("아이디를 입력하세요");
+		theform.mid.focus();
+		return;
+	}
+	//암호 확인
+	if(theform.mpass.value == null || theform.mpass.value == ""){
+		alert("암호를 입력하세요");
+		theform.mpass.focus();
+		return;
+	}
+	//주소 확인
+	if(theform.maddress.value == null || theform.maddress.value == ""){
+		alert("주소를 입력하세요");
+		theform.maddress.focus();
+		return;
+	}
+	//취미 확인
+	var h_cnt = 0 ; 
+	var h_ck = document.getElementsByName("mhobby");
+	for (i=0; i<h_ck.length; i++){
+		if(h_ck[i].checked == true) h_cnt++;
+	}
+	if(h_cnt < 1){
+		alert("취미를 한개 이상 선택하세요");	
+		return;
+	}
+	//직업 확인
+	var j_ck = document.getElementsByName("mjob");
+	var j_cnt = 0;
+	for(i=0; i<j_ck.length;i++){
+		if(j_ck[i].checked == true) j_cnt++;
+	}
+	if(j_cnt < 1){
+		alert("직업을 선택하세요");	
+		return;
+	}
+	//자기소개 확인
+	//textarea에는 value속성이 없을뿐, <body>의 내용이 value로 인식된다.
+	if(theform.mresume.value == null || theform.mresume.value == ""){
+		alert("자기소개를 입력하세요");
+		theform.mresume.focus();
+		return;
+	}
+	//핸드폰 mphone1 - select 
+	if(theform.mphone1.value == "000"){
+		alert("번호를 선택해주세요");
+		theform.mphone1.focus();
+		return;
+	}
+	//핸드폰 mphone2
+	if(theform.mphone2.value == null || theform.mphone2.value == ""){
+		alert("핸드폰번호를 입력하세요");
+		theform.mphone2.focus();
+		return;
+	}
+	//핸드폰 mphone3
+	if(theform.mphone3.value == null || theform.mphone3.value == ""){
+		alert("핸드폰번호를 입력하세요");
+		theform.mphone3.focus();
+		return;
+	}
+	//document.mymember.submit(); 확인되면 폼 전송
+	//원래는 필요하지만 현재는 html만 하므로 생략
+}
+function isNum(e) {
+	var num = e.keyCode;
+	if(num >= 48 && num <= 57) {
+		return true;
+	} else {
+		alert("숫자만 입력하세요");
+		return false;
+	}
+}
+</script>
+<body>
+<!-- 폼태그는 모든 폼 구성요소를 감싸야한다. 제외되는 요소(elements)는 작동하지 않음. -->
+<form name="mymember">
+	<table border="1" align="center">
+		<tr>
+			<td colspan="2" align="center">
+				<font color="blue" size="5">회원가입폼 만들기</font>
+			</td>
+		</tr>
+		<tr>
+			<td width="100">이름</td>
+			<td width="400"><input type="text" name="mname" size="15" value=""></td>
+		</tr>
+		<tr>
+			<td>아이디</td>
+			<td><input type="text" name="mid" size="15" value=""></td>
+		</tr>
+		<tr>
+			<td>암호</td>
+			<td><input type="password" name="mpass" size="15" value=""></td>
+		</tr>
+		<tr>
+			<td>주소</td>
+			<td><input type="text" name="maddress" size="40" value=""></td>
+		</tr>
+		<tr>
+			<td>취미</td>
+			<td>
+				<!-- checkbox는 다중선택이 가능하므로 name이 다르다. -->
+				<input type="checkbox" id="mhobby1" name="mhobby" value="독서"> 독서
+				<input type="checkbox" id="mhobby2" name="mhobby" value="게임"> 게임
+				<input type="checkbox" id="mhobby3" name="mhobby" value="영화"> 영화
+				<input type="checkbox" id="mhobby4" name="mhobby" value="잠자기" > 잠자기
+			</td>
+		</tr>
+		<tr>
+			<td>직업</td>
+			<td>
+				<!-- radio는 다중택일이므로 name이 같다.
+				기본 선택 값을 주려면  checked="checked" 속성 입력
+				 -->
+				<input type="radio" name="mjob" value="백수"> 백수
+				<input type="radio" name="mjob" value="백조"> 백조
+				<input type="radio" name="mjob" value="군인"> 군인
+				<input type="radio" name="mjob" value="회사원"> 회사원
+				<input type="radio" name="mjob" value="프로그래머"> 프로그래머
+			</td>
+		</tr>
+		<tr>
+			<td>자기소개</td>
+			<td>
+				<!-- 여러줄 입력상자 rows줄 cols열 -->
+				<!-- textarea는 value 속성이 없다 <textarea></textarea>사이가 띄워져있으면 empty상태가 아니다.
+				그냥 <body>의 내용을 뿌리거나 출력한다. -->
+				<textarea rows="4" cols="40" name="mresume"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td>전화번호</td>
+			<td>
+				<select name="mphone1">
+					<option value="000" selected="selected">선택하세요</option>
+					<option value="010">010</option>
+					<option value="011">011</option>
+					<option value="017">017</option>
+					<option value="018">018</option>
+					<option value="019">019</option>
+				</select>
+				 - <input type="text" name="mphone2" size="4" onkeypress="return isNum(event)" maxlength="4" value="">
+				 - <input type="text" name="mphone3" size="4" onkeypress="return isNum(event)" maxlength="4" value="">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<!-- 현재 폼을 인자로 받는다. -->
+				<input type="button" value="가입하기" 
+					onclick="myFormCheck(this.form)">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="reset" value="다시쓰기">
+			</td>
+			<!-- <td></td>  -->
+		</tr>
+	</table>
+</form>
+</body>
+</html>

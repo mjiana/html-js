@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+//화면에 직접 출력되는 함수가 아닌 것은 <body> 시작 전에 정의한다.
+function showDate() {
+	var today = new Date();
+	var sum_date =  today.getFullYear() +"년 ";
+	
+	sum_date += (today.getMonth()+1) + "월 ";
+	sum_date += (today.getDate())+"일 ";
+	m = (today.getDay());//요일은 숫자로 반환
+	switch (m) { //숫자요일을 문자로 변환
+		case 0: m_day = "Sunday"; break;
+		case 1: m_day = "Monday"; break;
+		case 2: m_day = "Tuesday"; break;
+		case 3: m_day = "Wednesday"; break;
+		case 4: m_day = "Thursday"; break;
+		case 5: m_day = "Friday"; break;
+		case 6: m_day = "Saturday"; break;
+	}
+	sum_date += m_day;
+	//문서의 요소에 접근하는 방법 : 큰것에서 작은 것으로 접근한다.
+	//윈도우 생략 -> 문서 -> 폼 -> 요소 -> 속성
+	//원하는 곳에 데이터 출력
+	document.clock_frm.date_in.value = sum_date;
+	//반대로 원하는 곳의 데이터를 가져오는것
+	//sum_date = document.clock_frm.date_in.value
+}
+function showTime(){
+	var now = new Date();
+	var hour = now.getHours();
+	var min = now.getMinutes();
+	var sec = now.getSeconds();
+	var sum_time = (hour>12) ? hour-12 : hour;
+	
+	sum_time += ((min<10) ? ":0" : ":") + min;
+	sum_time += ((sec<10) ? ":0" : ":") + sec;
+	sum_time += (hour>=12) ? " P.M." : " A.M.";
+	
+	document.clock_frm.time_in.value = sum_time;
+	//setTimeout("호출함수()",ms); 특정시간 후에 함수를 계속 호출함(재귀)
+	//1000ms = 1초
+	timer_again = setTimeout("showTime()",1000);
+}
+function startClock() {
+	showDate();
+	showTime();
+}
+</script>
+<!-- 화면에 뿌려지지않는 함수는 <body>밖에서 작성된다  -->
+<body onLoad="startClock()"><!-- onLoad : 이벤트 핸들러, 문서가 로드 될 때 -->
+<h2>현재 날짜와 시간</h2>
+<form name="clock_frm">
+날짜 : <input type="text" name="date_in" size="25" value=""><br>
+시간 :<input type="text" name="time_in" size="25" value=""> <br>
+</form>
+</body>
+</html>

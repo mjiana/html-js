@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+//자바스크립트는 대소문자를 구별한다.
+//함수 정의하기, 반환형을 기술하지 않는다.
+function add(a,b){
+	return a+b; //리턴이 있는 경우
+}
+function addWrite(a,b){
+	//eval() : 연산이 가능하도록 자동형변환 
+	document.write(eval(a+b));
+	//리턴이 없는 경우
+}
+</script>
+<script type="text/javascript">
+a = 100;
+b = 200;
+c = add(a, b);
+
+document.write(c); //결과를 화면에 출력
+alert(c); //결과를 경고창으로 출력
+document.write("<br>"); //화면에서 줄바꿈
+addWrite(a, b); // 함수안에 출력문
+</script>
+</body>
+</html>

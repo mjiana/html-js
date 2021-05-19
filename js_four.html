@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+//변수 테스트
+//var name = "홍길동"; //명시적 선언, 전역변수처럼 작동한다.
+name = "홍길동"; //선언과 상관없이 전역변수처럼 작동한다.
+
+function addStr() {
+	name = name + "킹";
+}
+function addStr2() {
+	name = name + "왕";
+}
+function addStr3() {
+	name = name + "짱";
+}
+
+document.write(name+"<br>");
+addStr();
+document.write(name+"<br>");
+addStr2();
+document.write(name+"<br>");
+addStr3();
+document.write(name+"<br>");
+
+</script>
+</body>
+</html>
