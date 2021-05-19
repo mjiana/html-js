@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>7. 테이블(표) 다루기3</title>
+</head>
+<body>
+셀합치기<br> 
+행 합치기 rowspan, 열 합치기 colspan<br>
+행이나 열을 합치면 합쳐진 태그는 한개만 표현되고 남은 태그는 삭제된다<br>
+열이 합쳐지면서 td의 width가 사라졌으므로 칸의 사이즈를 맞추기 위해서는 합쳐진 칸의 width를 증가하던가, 두번째 세번째 칸의 width를 적용한다.
+<table border="1">
+	<tr>
+		<td width="80" height="90">1</td>
+	 	<td width="80" colspan="2">2 colspan</td>
+	 	<!-- <td width="20">3</td> -->
+	</tr>
+	<tr>
+		<td height="90">1</td>
+	 	<td width="80" rowspan="2">2 rowspan</td>
+	 	<td width="80">3</td>
+	</tr>
+		<tr>
+		<td height="90">1</td>
+	 	<!-- <td>2</td>  -->
+	 	<td>3</td>
+	</tr>
+</table>
+</body>
+</html>

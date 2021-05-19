@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>3. 이미지를 다루는 태그</title>
+</head>
+<body>
+<a href="sub/third_sub.html">third_sub로 이동하기</a><br><br>
+<h4>1. 춘식이는 야옹</h4>
+<!-- Properties Resource path경로는 가져오되
+ WebContent는 지우기 -->
+이미지 경로는 상황에 따라 아래 3가지 상황이 다르므로 모두 기억하기<br>
+<b>1) 웹루트 표시된 절대경로</b> : /htmlstudy/images/ryan_cs.jpg <br>
+<b>2) 웹루트 생략된 절대경로</b> : /images/cs1.jpg<br>
+<img alt="춘식이는 야옹" src="/htmlstudy/images/ryan_cs.jpg"><br>
+<img alt="춘식이는 야옹" src="/images/cs1.jpg" ><br>
+<b>3) 현재 문서 기준 상대경로</b> : ./images/cs2.jpg<br>
+<img alt="춘식이는 야옹" src="./images/cs2.jpg" ><br>
+<!-- src 쌍따옴표 안에서 ctrl spacebar 하니까 불러올 수 있는 그림파일들이 다 나온다 -->
+<b>4) 현재 문서 기준 디폴트 상대경로</b> : images/cs3.jpg<br>
+<img alt="춘식이는 야옹" src="images/cs3.jpg" width="200" height="150"><br>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>8. 테이블(표) 다루기4</title>
+</head>
+<body>
+테이블 내부색상, 셀색상, 아기테이블 <br>
+상대적 n%는 창의 크기에 따라서 테이블의 크기도 바뀐다.<br>
+<table style="border:0; width: 100%; height:100%;">
+	<tr>
+		<td width="200" height="300" background="../a/b/c/smile.jpg">1</td>
+	 	<td width="400" colspan="2" valign="middle" align="center">
+	 		2 colspan
+	 		<table> <!-- border를 먼저 넣고 만든 뒤 지우면 편하다 -->
+	 			<tr>
+	 				<td width="160" height="100">1</td>
+	 				<td width="160"  bgcolor="red"></td>
+	 			</tr>
+	 			<tr>
+	 				<td height="100" bgcolor="blue"></td>
+	 				<td>2</td>
+	 			</tr>
+	 		</table>
+	 	</td>
+	 	<!-- <td width="20">3</td> -->
+	</tr>
+	<tr>
+		<td height="300" bgcolor="green">1</td>
+	 	<td width="200" rowspan="2">2 rowspan</td>
+	 	<td width="200">3</td>
+	</tr>
+		<tr>
+		<td height="300">1</td>
+	 	<!-- <td>2</td>  -->
+	 	<td>3</td>
+	</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html> <!-- html5 문서의 선언 -->
+<html> <!-- html문서는 <html>태그로 시작하여 </html> 태그로 끝난다 -->
+<head><!-- 화면에 보이지 않고, 문서의 환경을 설정한다. -->
+<meta charset="EUC-KR"><!-- 이 문서에는 한글이 포함되어 있다. 없으면 한글이 깨질 수 있다. -->
+<title>9. 글자입력폼 만들기</title><!-- 문서의 제목 -->
+</head>
+<body><!-- 실제 데이터를 화면에 출력하는 부분, 눈에 보이는 것들은 다 body안에 있다 -->
+
+<!-- width는 첫 줄에만 -->
+<!-- input은 </>안해도 된다. size는 외관상 크기 -->
+<!-- html5 미지원 -->
+<table border="1" align="center">
+	<tr>
+		<td colspan="2" align="center">
+			<font color="blue" size="5">회원가입폼 만들기</font>
+		</td>
+	</tr>
+	<tr>
+		<td width="100">이름</td>
+		<td width="400"><input type="text" name="mname" size="15"></td>
+	</tr>
+	<tr>
+		<td>아이디</td>
+		<td><input type="text" name="mid" size="15"></td>
+	</tr>
+	<tr>
+		<td>암호</td>
+		<td><input type="password" name="mpass" size="15"></td>
+	</tr>
+	<tr>
+		<td>주소</td>
+		<td><input type="text" name="maddress" size="40"></td>
+	</tr>
+	<tr>
+		<td>취미</td>
+		<td>
+			<!-- checkbox는 다중선택이 가능하므로 name이 다르다. -->
+			<input type="checkbox" name="mhobby1"> 독서
+			<input type="checkbox" name="mhobby2"> 게임
+			<input type="checkbox" name="mhobby3"> 영화
+			<input type="checkbox" name="mhobby4"> 잠자기
+		</td>
+	</tr>
+	<tr>
+		<td>직업</td>
+		<td>
+			<!-- radio는 다중택일이므로 name이 같다. -->
+			<input type="radio" name="mjob"> 백수
+			<input type="radio" name="mjob"> 백조
+			<input type="radio" name="mjob"> 군인
+			<input type="radio" name="mjob"> 회사원
+			<input type="radio" name="mjob"> 프로그래머
+		</td>
+	</tr>
+	<tr>
+		<td>자기소개</td>
+		<td>
+			<!-- 여러줄 입력상자 rows줄 cols열 -->
+			<textarea rows="4" cols="40" name="mresume"></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td>전화번호</td>
+		<td>
+			<select name="mphone1">
+				<option value="010">010</option>
+				<option value="011">011</option>
+				<option value="017">017</option>
+				<option value="018">018</option>
+				<option value="019">019</option>
+			</select>
+			 - <input type="text" name="mphone2" size="4">
+			 - <input type="text" name="mphone3" size="4">
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">
+			<!-- submit 버튼은 전송기능이 있는 버튼 -->
+			<input type="submit" value="가입하기">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="reset" value="다시쓰기">
+		</td>
+		<!-- <td></td>  -->
+	</tr>
+</table>
+</body>
+</html>
